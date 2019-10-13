@@ -3,7 +3,7 @@ session_start();
 include("common.php");
 $person=$_SESSION["id"];
 if(!isset($person)){
-header("location:index.php");}
+header("location:indexCompany.php");}
 if(isset($_POST['readrecords'])){
 echo'<body id="page-top>
 

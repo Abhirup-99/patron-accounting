@@ -3,7 +3,7 @@ session_start();
 	require("common.php");
 	$person=$_SESSION["id"];
 	if(!isset($person)){
-	header("location:index.php");}
+	header("location:indexCompany.php");}
 	if(((int)$_SESSION['valid'])==1)
 	{
 	header("Location:sad.php");}
@@ -18,6 +18,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Abhirup Pal">
+  <link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
 
   <title>Patron Accounting LLP</title>
 

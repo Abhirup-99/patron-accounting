@@ -3,7 +3,7 @@
   include("common.php");
 	$person=$_SESSION["id"];
 	if(!isset($person)){
-	header("location:index.php");}
+	header("location:indexCompany.php");}
   function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);

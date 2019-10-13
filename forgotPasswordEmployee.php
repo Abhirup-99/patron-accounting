@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Abhirup Pal">
+  <link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
 
   <title>Patron Accounting LLP</title>
 

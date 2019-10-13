@@ -11,7 +11,7 @@ $name=test_input($_POST['name']);
 $username=test_input($_POST['username']);
 $password=test_input($_POST['password']);
 $email=test_input($_POST['email']);
-$check="SELECT * FROM users WHERE email='$email'";
+$check="SELECT * FROM customer WHERE email='$email'";
 $result=mysqli_query($con,$check);
 $num=mysqli_num_rows($result);
 if($num==0)
@@ -21,12 +21,12 @@ if($num==0)
 	$sql="SELECT * FROM users WHERE email='$email'";
 	$row=mysqli_query($con,$sql);
 	$result=mysqli_fetch_array($row);
-	$_SESSION['idCustomer']=$row['id'];
+	$_SESSION['idCustomer']=$result['id'];
 	header("location: customerLoginView.php");
 }
 else
 {
 	$_SESSION['bad']='1';
-	header("Location:form.php");
+	header("Location:formCustomer.php");
 }
 ?>

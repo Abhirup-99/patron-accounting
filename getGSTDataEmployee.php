@@ -3,7 +3,7 @@ session_start();
 	require("common.php");
 	$person=$_SESSION["id"];
 	if(!isset($person)){
-	header("location:index.php");}
+	header("location:indexCompany.php");}
 	if(((int)$_SESSION['valid'])==1)
 	{
 	header("Location:sad.php");}

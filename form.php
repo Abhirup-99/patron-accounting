@@ -14,7 +14,7 @@ if(isset($_SESSION['bad'])){
     <meta name="description" content="">
     <meta name="author" content="Abhirup Pal">
     <meta name="keywords" content="">
-
+    <link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
     <!-- Title Page-->
     <title>Patron Accounting LLP</title>
 

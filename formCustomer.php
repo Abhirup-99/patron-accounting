@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['bad'])){
-	echo"<script>alert('User already registered with the email');</script>";
+    echo"<script>alert('User already registered with the email');</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -12,9 +12,9 @@ if(isset($_SESSION['bad'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Abhirup">
+    <meta name="author" content="Abhirup Pal">
     <meta name="keywords" content="">
-
+    <link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
     <!-- Title Page-->
     <title>Patron Accounting LLP</title>
 
@@ -39,7 +39,7 @@ if(isset($_SESSION['bad'])){
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form method="POST" action="register.php">
+                    <form method="POST" action="registerCustomer.php">
                         <div class="input-group">
                             <input class="input--style-1" type="text" placeholder="NAME" name="name">
                         </div>

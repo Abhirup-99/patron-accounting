@@ -4,6 +4,6 @@ if (!isset($_SESSION['idMaster'])) {
     header('location: index.php');
 }
 session_destroy();
-header('location: masterLoginView.php');
+header('location: index.php');
 
 ?>

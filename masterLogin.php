@@ -9,6 +9,7 @@ if(isset($_SESSION["error"])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
 	<meta name="author" content="Abhirup Pal">
 	<title>Patron Accounting LLP</title>
 	<meta charset="UTF-8">
@@ -68,6 +69,11 @@ if(isset($_SESSION["error"])){
 
 						<a href="forgotPassword.php" class="txt2">
 							User name / password?
+						</a>
+					</div>
+					<div class="w-full text-center">
+						<a href="formMaster.php" class="txt3">
+							Sign In
 						</a>
 					</div>
 

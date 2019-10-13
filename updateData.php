@@ -3,7 +3,7 @@ session_start();
 	require("common.php");
 	$person=$_SESSION["id"];
 	if(!isset($person)){
-	header("location:index.php");}
+	header("location:indexCompany.php");}
 	$id = $_GET["id"];
 	$id=(int)$id;
 	$query = "SELECT * FROM register WHERE id=" . $id;

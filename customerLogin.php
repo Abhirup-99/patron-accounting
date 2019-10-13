@@ -10,6 +10,7 @@ if(isset($_SESSION["error"])){
 <html lang="en">
 <head>
 	<meta name="author" content="Abhirup Pal">
+	<link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
 	<title>Patron Accounting LLP</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,7 +77,7 @@ if(isset($_SESSION["error"])){
 						</a>
 					</div>
 					<div class="w-full text-center">
-						<a href="employeeLogin.php" class="txt3">
+						<a href="formCustomer.php" class="txt3">
 							Sign In
 						</a>
 					</div>

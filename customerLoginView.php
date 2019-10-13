@@ -19,6 +19,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Abhirup Pal">
+  <link rel="icon" href="Patron.jpg" type="image/jpg" sizes="16x16">
 
   <title>Patron Accounting LLP</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -67,13 +68,10 @@ margin-right: 15px;
       <li class="nav-item active">
         <a class="nav-link" href="customerLoginView.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <span>GST Registration</span>
         </a>
       </li>
 	  
-	  <li class="nav-item text-light text-center">Profile Picture
-	  <div class="img-fluid"></div>
-	  </li>
       <li class="nav-item">
         <a class="nav-link" href="llpRegistration.php">
           <i class="fas fa-fw fa-table"></i>

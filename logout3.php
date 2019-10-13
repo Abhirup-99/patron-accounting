@@ -4,6 +4,6 @@ if (!isset($_SESSION['idCustomer'])) {
     header('location: index.php');
 }
 session_destroy();
-header('location: customerLogin.php');
+header('location: index.php');
 
 ?>

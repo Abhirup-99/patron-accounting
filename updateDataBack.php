@@ -3,7 +3,7 @@
   include("common.php");
 	$person=$_SESSION["id"];
 	if(!isset($person)){
-	header("location:index.php");}
+	header("location:indexCompany.php");}
   $email=$name=$pass=$stream=$section=$class_Roll=$university_Roll=$college_enroll="";
   function test_input($data) {
   $data = trim($data);
