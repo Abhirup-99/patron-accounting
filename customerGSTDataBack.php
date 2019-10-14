@@ -21,70 +21,57 @@ $message=test_input($_POST['message']);
 if($PANerror!=0)
 {
 	$_SESSION['error']="Please rectify the PAN document";
-	header("Location:GSTForm.php");
+	header("Location:GSTData.php");
 }
 $Adhaarerror=$_FILES['Adhaar']['error'];
 if($Adhaarerror!=0)
 {
 	$_SESSION['error']="Please rectify the Adhaar document";
-	header("Location:GSTForm.php");
+	header("Location:GSTData.php");
 }
 $Chequeerror = $_FILES['Cheque']['error'];
 if($Chequeerror!=0)
 {
 	$_SESSION['error']="Please rectify the cheque document";
-	header("Location:GSTForm.php");
+	header("Location:GSTData.php");
 }
 $Addresserror = $_FILES['Address']['error'];
 if($Addresserror!=0)
 {
 	$_SESSION['error']="Please rectify the address document";
-	header("Location:GSTForm.php");
-}
-$Renterror = $_FILES['Rent']['error'];
-if($Renterror!=0)
-{
-	$_SESSION['error']="Please rectify the rent document again";
-	header("Location:GSTForm.php");
+	header("Location:GSTData.php");
 }
 
 $a=0;
-if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0 && $Renterror==0)
+if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0)
 {
 	if(filesize($_FILES['PAN']['name'])>150000)
 	{
 		clearstatcache();
 		$a=1;
 		$_SESSION['error']='PAN pdf exceeded the file size limit';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}	
 	if(filesize($_FILES['Adhaar']['name'])>150000)
 	{
 		clearstatcache();
 		$a=1;
 		$_SESSION['error']='Adhaar pdf exceeded the file size limit';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}	
 	if(filesize($_FILES['Cheque']['name'])>150000)
 	{
 		clearstatcache();
 		$a=1;
 		$_SESSION['error']='Cheque pdf exceeded the file size limit';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}	
 	if(filesize($_FILES['Address']['name'])>150000)
 	{
 		clearstatcache();
 		$a=1;
 		$_SESSION['error']='Address pdf exceeded the file size limit';
-		header("Location:GSTForm.php");
-	}	
-	if(filesize($_FILES['Rent']['name'])>150000)
-	{
-		clearstatcache();
-		$a=1;
-		$_SESSION['error']='Rent pdf exceeded the file size limit';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}	
 
 	$type='PAN';
@@ -98,7 +85,7 @@ if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0 && $Re
 	{
 		$a=1;
 		$_SESSION['error']='Please enter in a pdf format';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}
 	$PANfolder="PAN/".$PANname;
 	move_uploaded_file($PANtempname,$PANfolder);
@@ -113,26 +100,12 @@ if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0 && $Re
 	{
 		$a=1;
 		$_SESSION['error']='Please enter in a pdf format';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}
 	$Adhaarfolder="Adhaar/".$Adhaarname;
 	move_uploaded_file($Adhaartempname,$Adhaarfolder);
 	
-		$type='Rent';
-		$code = rand(50362,99999);
-		$Rentname=$_FILES["Rent"]["name"];
-		$Renttempname=$_FILES["Rent"]["tmp_name"];
-		$filetype=pathinfo($Rentname,PATHINFO_EXTENSION);
-		$filename=$email.$type.$code.".".$filetype;
-		if($filetype !== 'pdf')
-		{
-			$a=1;
-			$_SESSION['error']='Please enter in a pdf format';
-			header("Location:GSTForm.php");
-		}
-		$Rentfolder="Rent/".$Rentname;
-		move_uploaded_file($Renttempname,$Rentfolder);
-
+	$Rentfolder='';
 
 
 	$type='Address';
@@ -145,7 +118,7 @@ if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0 && $Re
 	{
 		$a=1;
 		$_SESSION['error']='Please enter in a pdf format';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}
 	$Addressfolder="Address/".$Addressname;
 	move_uploaded_file($Addresstempname,$Addressfolder);
@@ -161,7 +134,7 @@ if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0 && $Re
 	{
 		$a=1;
 		$_SESSION['error']='Please enter in a pdf format';
-		header("Location:GSTForm.php");
+		header("Location:GSTData.php");
 	}
 	$Chequefolder="Cheque/".$Chequename;
 	move_uploaded_file($Chequetempname,$Chequefolder);
@@ -169,7 +142,7 @@ if($PANerror==0 && $Adhaarerror==0 && $Chequeerror==0 && $Addresserror==0 && $Re
 	if($a!=1){
 	$sql="INSERT INTO gstdata(id,email,mobile,business,tradename,PAN,Adhaar,Cheque,Address,Rent) VALUES($id,'$email','$number','$business','$tradename','$PANfolder','$Adhaarfolder','$Chequefolder','$Addressfolder','$Rentfolder')";
 	mysqli_query($con,$sql);}
-	header("Location:GSTForm.php");
+	header("Location:GSTData.php");
 	require 'PHPMailerAutoload.php';
 
 $sentence='';
@@ -197,7 +170,7 @@ $mail->send()
 else
 {
 	$_SESSION['error']='Please try again!!';
-	header("Location:GSTForm.php");
+	header("Location:customerLoginView.php");
 	
 }
 ?>

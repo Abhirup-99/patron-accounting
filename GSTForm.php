@@ -34,10 +34,8 @@ session_start();
 
 <body id="page-top">
 <style>
-.headings{
-	background-color:rgb(212, 212, 212);
-	font-weight: lighter;
-	padding:10px;
+table tr td:last-child a{
+margin-right: 15px;
 }
 </style>
 <frameset rows=”100%,0″ border=”0″>
@@ -104,116 +102,62 @@ session_start();
           </li>
           <li class="breadcrumb-item active">Client Overview</li>
         </ol>
-        <form action="llpRegistrationBack.php" method="post" enctype="multipart/form-data">
-		<div class="headings">Proposed LLP Details</div>
-		<br>
+        <form action="customerGSTFormBack.php" method="post" enctype="multipart/form-data">
 		<input type="hidden" name= "id" value="<?php echo $_SESSION["idCustomer"];?>">
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Proposed Name of LLP (1st Preference)</b></label>
-				<div class="col-sm-6">
-				<input type="text" name="name1" class="form-control" value="" required>
-				</div>
-			</div>
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Proposed Name of LLP (2nd Preference)</b></label>
-				<div class="col-sm-6">
-				<input type="text" name="name2" class="form-control" value="" required>
-				</div>
-			</div>
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Business objective of proposed LLP (object clause)</b></label>
-				<div class="col-sm-6">
-				<textarea name="business" class="form-control" value="" required cols="30" rows="5"></textarea>
-				</div>
-			</div>
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Total capital contribution of LLP</b></label>
-				<div class="col-sm-6">
-				<input type="text" name="capital" class="form-control" value="">
-				</div>
-			</div>
-			<div style="font-weight:light;">This proof can be electricity bill, mobile or telephone bill or utility bill not older than 2 months and shall be self attested by owner of the property</div>
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Address Proof of proposed registrar office of LLP (only PDF format and attested from owner)</b></label>
-				<div class="col-sm-6">
-				<input type="file" name="Address" class="form-control" value="" required>
-				</div>
-			</div>
-			<div class="headings">Partner Details</div>
-			<br>
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Name of the Partner<span style="color:red;">*</span></b></label>
-				<div class="col-sm-6">
-				<input type="text" name="namePartner" class="form-control" value="" required>
-				</div>
-			</div>
-
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Personal Email ID<span style="color:red;">*</span></b></label>
+				<label class="col-sm-3 col-form-label text-right"><b>Email ID to be given at GST Portal<span style="color:red;">*</span></b></label>
 				<div class="col-sm-6">
 				<input type="text" name="email" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Mobile<span style="color:red;">*</span></b></label>
+				<label class="col-sm-3 col-form-label text-right"><b>Mobile Number<span style="color:red;">*</span></b></label>
 				<div class="col-sm-6">
-				<input type="text" name="mobile" class="form-control" value="" required>
+				<input type="text" name="number" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Qualification<span style="color:red;">*</span></b></label>
-				
+				<label class="col-sm-3 col-form-label text-right"><b>Main Business activity to be carried<span style="color:red;">*</span></b></label>
 				<div class="col-sm-6">
-				<input type="text" name="qualification" class="form-control" value="" required>
+				<input type="text" name="business" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Occupation<span style="color:red;">*</span></b></label>
-				
+				<label class="col-sm-3 col-form-label text-right"><b>Tradename of your business, if any</b></label>
 				<div class="col-sm-6">
-				<input type="text" name="occupation" class="form-control" value="">
+				<input type="text" name="tradename" class="form-control" value="">
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Individual contribution of this Partner<span style="color:red;">*</span></b></label>
-				
+				<label class="col-sm-3 col-form-label text-right"><b>Self attested PAN of the owner in PDF format only<span style="color:red;">*</span></b></label>
 				<div class="col-sm-6">
-				<input type="text" name="individualContrib" class="form-control" value="">
+				<input type="file" name="PAN" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>If already Director in other LLP or Company then provide Director Identification number (DIN)</b></label>
-				
+				<label class="col-sm-3 col-form-label text-right"><b>Self attested Adhaar of the owner in PDF format only<span style="color:red;">*</span></b></label>
 				<div class="col-sm-6">
-				<input type="text" name="DIN" class="form-control" value="">
+				<input type="file" name="Adhaar" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Self attested PAN in PDF format only<span style="color:red;">*</span></b></label>
-				
+				<label class="col-sm-3 col-form-label text-right"><b>Cancelled cheque or unprotected bank statement (Self attested for bank statement in PDF format only)<span style="color:red;">*</span></b></label>
 				<div class="col-sm-6">
-				<input type="file" name="PAN" class="form-control" value="">
+				<input type="file" name="Cheque" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Self attested Adhaar in PDF format only</b></label>
+				<label class="col-sm-3 col-form-label text-right"><b>Self attested address proof (rent agreement or Utility bill or Mobile bill) not older than 2 months in PDF format only<span style="color:red;">*</span></b></label>
 				
 				<div class="col-sm-6">
-				<input type="file" name="Adhaar" class="form-control" value="">
+				<input type="file" name="Address" class="form-control" value="" required>
 				</div>
 			</div>
 			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Self attested (Passport or Voter card or Driving License) in PDF format only<span style="color:red;">*</span></b></label>
+				<label class="col-sm-3 col-form-label text-right"><b>Any message for our team ?&#128512;</b></label>
 				
 				<div class="col-sm-6">
-				<input type="file" name="Passport" class="form-control" value="">
-				</div>
-			</div>
-			<div class="form-group row justify-content-left">
-				<label class="col-sm-3 col-form-label text-right"><b>Self attested address proof (Bank statement or Utility bill or Mobile bill) not older than 2 months in PDF format only<span style="color:red;">*</span></b></label>
-				
-				<div class="col-sm-6">
-				<input type="file" name="Bank" class="form-control" value="">
+				<input type="text" name="message" class="form-control" value="">
 				</div>
 			</div>
 			<center>

@@ -35,6 +35,11 @@ session_start();
   font-weight: lighter;
   padding:10px;
 }
+#link{
+   display: flex;
+  justify-content: flex-end;
+}
+}
 </style>
 <frameset rows=”100%,0″ border=”0″>
 <frame src=”http://iemresearchinfo/mentorship” frameborder=”0″>
@@ -100,23 +105,39 @@ session_start();
           </li>
           <li class="breadcrumb-item active">Client Overview</li>
         </ol>
-        <div class="headings">All Documents should be <b>150 kB(max)</b> in <b>pdf</b> format only</div>
-        <center><b>Documents Required</b></center>
-
-        <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-          <tbody>
-            <tr><th><center>Owned</center></th><th><center>Rented</center></th></tr>
-            <tr><td><center>----------------</center></td><td><center>NOC From Land Owner</center></td></tr>
-            <tr><td colspan="2"><center>Self Attested PAN</center></td></tr>
-            <tr><td colspan="2"><center>Self Attested Adhaar</center></td></tr>
-            <tr><td colspan="2"><center>Cancelled Cheque</center></td></tr>
-            <tr><td colspan="2"><center>Address Proof(Rent Agreement/Utility Bill/Mobile Bill) not more than 2 months old</center></td></tr>
-            <tr><td><center><a type="button" class="btn btn-success" href="GSTData.php">Click Me</a></center></td>
-            <td><center><a type="button" class="btn btn-success" href="rentDocumentFields.php">Click Me</a></center></td></tr>
-          </tbody>
-        </table>
+        <form action="rentDocumentBack.php" method="post" enctype="multipart/form-data">
+    <input type="hidden" name= "id" value="<?php echo $_SESSION["idCustomer"];?>">
+      <div class="form-group row justify-content-left">
+        <label class="col-sm-3 col-form-label text-right"><b>Name of landlord<span style="color:red;">*</span></b></label>
+        <div class="col-sm-6">
+        <input type="text" name="name" class="form-control" value="" required>
         </div>
+      </div>
+      <div class="form-group row justify-content-left">
+        <label class="col-sm-3 col-form-label text-right"><b>Completed Address of the Premises<span style="color:red;">*</span></b></label>
+        <div class="col-sm-6">
+        <input type="text" name="address" class="form-control" value="" required>
+        </div>
+      </div>
+      <div class="form-group row justify-content-left">
+        <label class="col-sm-3 col-form-label text-right"><b>Firm/Company<span style="color:red;">*</span></b></label>
+        <div class="col-sm-6">
+        <input type="text" name="company" class="form-control" value="" required>
+        </div>
+      </div>
+      <div class="form-group row justify-content-left">
+        <label class="col-sm-3 col-form-label text-right"><b>City name<span style="color:red;">*</span></b></label>
+        <div class="col-sm-6">
+        <input type="text" name="city" class="form-control" value="" required>
+        </div>
+      </div>
+      <center>
+        <button type="submit" class="btn btn-success">Update</button>
+      </center>
+    </form>
+    <div id="link">
+      <a href="GSTForm.php"><p>If already filled click here</p></a>
+    </div>
       </div>
       <!-- /.container-fluid -->
 
